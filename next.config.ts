@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: '/jf-academy',
+  assetPrefix: '/jf-academy/',
   images: {
     unoptimized: true,
     remotePatterns: [
