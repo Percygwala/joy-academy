@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Configuration for static export to GitHub Pages
 };
 
 export default nextConfig;
