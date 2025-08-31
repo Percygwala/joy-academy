@@ -259,7 +259,7 @@ export default function EnrolForm() {
             <span className="text-2xl">✅</span>
           </div>
           <h3 className="text-xl font-bold mb-2 font-heading">Thank you for enrolling!</h3>
-          <p className="font-sans">We'll contact you shortly to confirm your registration.</p>
+          <p className="font-sans">We&apos;ll contact you shortly to confirm your registration.</p>
         </motion.div>
       )}
     </motion.div>

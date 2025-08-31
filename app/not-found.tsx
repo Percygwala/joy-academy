@@ -23,8 +23,8 @@ export default function NotFound() {
             Oops! This page could not be found.
           </h2>
           <p className="text-lg text-[#0B2239]/80 font-sans mb-8">
-            The page you're looking for doesn't exist or has been moved. 
-            Let's get you back to the beautiful game!
+            The page you&apos;re looking for doesn&apos;t exist or has been moved. 
+            Let&apos;s get you back to the beautiful game!
           </p>
         </div>
 

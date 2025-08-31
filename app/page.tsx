@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import type { Metadata } from 'next'
