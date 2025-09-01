@@ -105,7 +105,7 @@ export default function Home() {
                 Our Vision
               </h2>
               <p className="text-xl lg:text-2xl leading-relaxed font-sans">
-                To empower and prepare young footballers for professional football and life beyond the game, enabling them to compete at the highest international levels by 17.
+                To empower and prepare young footballers for professional football and life beyond the game, enabling them to compete at the highest international levels by 17 years.
               </p>
             </AnimatedSection>
           </div>
