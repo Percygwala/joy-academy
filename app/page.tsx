@@ -44,13 +44,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src="/jf-academy/images/image.png" 
-            alt="Joy Football Academy players training" 
-            className="w-full h-full object-cover"
-          />
-        </div>
+                    <div className="absolute inset-0">
+              <img
+                src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/image.png`}
+                alt="Joy Football Academy players training"
+                className="w-full h-full object-cover"
+              />
+            </div>
         
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-transparent"></div>

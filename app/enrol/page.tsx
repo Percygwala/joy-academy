@@ -39,7 +39,7 @@ export default function Enrol() {
       {/* Enrolment Banner */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src="/jf-academy/images/soccer-player-action-stadium.png" 
+          src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/soccer-player-action-stadium.png`}
           alt="Enrolment banner" 
           className="w-full h-full object-cover"
         />

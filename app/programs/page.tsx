@@ -94,7 +94,7 @@ export default function Programs() {
       {/* Programs Banner */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src="/jf-academy/images/full.png" 
+          src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/full.png`}
           alt="Football training programs" 
           className="w-full h-full object-cover"
         />
@@ -193,7 +193,7 @@ export default function Programs() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                href="/enrol"
+                href="/enrol/"
                 variant="primary"
                 size="lg"
                 className="bg-white text-[#D7263D] hover:bg-gray-100"
