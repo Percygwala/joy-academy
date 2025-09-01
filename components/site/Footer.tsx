@@ -1,8 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 export default function Footer() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <footer className="bg-gradient-to-r from-[#0B2239] to-[#1a3a5a] text-white py-16 border-t border-[#0B2239]/20">
       <div className="max-w-7xl mx-auto px-6">
@@ -78,25 +85,42 @@ export default function Footer() {
           <div className="text-center md:text-right">
             <h4 className="text-xl font-bold font-heading mb-6">Quick Links</h4>
             <div className="space-y-3">
-              <motion.p 
-                className="font-sans"
-                whileHover={{ scale: 1.02, x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <a href="/programs/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
-                  Programs & Pricing
-                </a>
-              </motion.p>
+              {mounted ? (
+                <>
+                  <motion.p 
+                    className="font-sans"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a href="/programs/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
+                      Programs & Pricing
+                    </a>
+                  </motion.p>
 
-              <motion.p 
-                className="font-sans"
-                whileHover={{ scale: 1.02, x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <a href="/enrol/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
-                  Enrol Now
-                </a>
-              </motion.p>
+                  <motion.p 
+                    className="font-sans"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a href="/enrol/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
+                      Enrol Now
+                    </a>
+                  </motion.p>
+                </>
+              ) : (
+                <>
+                  <p className="font-sans">
+                    <a href="/programs/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
+                      Programs & Pricing
+                    </a>
+                  </p>
+                  <p className="font-sans">
+                    <a href="/enrol/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
+                      Enrol Now
+                    </a>
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </div>
