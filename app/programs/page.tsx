@@ -44,7 +44,7 @@ const threeTimesAWeekPrograms = [
   {
     title: "U13",
     price: "R1,350/month",
-    description: "Advanced techniques, conditioning & match prep.",
+    description: "At Joy Football Academy, player health and safety come first. For U13 and above, we conduct sports medicals to check injuries, mobility, and skeletal health. This helps us spot risks early and adapt training to keep players safe and thriving.",
     frequency: "Up to 3x a Week",
                     href: "/enroll/?program=U13"
   },
