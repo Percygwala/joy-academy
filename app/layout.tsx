@@ -112,9 +112,17 @@ export default function RootLayout({
                   window.MutationObserver.CONSTANTS = OriginalMutationObserver.CONSTANTS;
                 }
                 
-                // Global error handler
+                // Global error handler for MutationObserver
                 window.addEventListener('error', function(e) {
                   if (e.message && e.message.includes('MutationObserver')) {
+                    e.preventDefault();
+                    return false;
+                  }
+                });
+                
+                // Additional error handling for MutationObserver
+                window.addEventListener('unhandledrejection', function(e) {
+                  if (e.reason && e.reason.message && e.reason.message.includes('MutationObserver')) {
                     e.preventDefault();
                     return false;
                   }
