@@ -16,9 +16,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Academy Info */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold font-heading mb-4">
-              Joy Football Academy
-            </h3>
+            <div className="mb-4">
+              <img 
+                src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogow.svg`}
+                alt="Joy Football Academy Logo" 
+                className="h-16 w-auto max-w-[300px] mx-auto md:mx-0"
+              />
+            </div>
             <p className="text-[#A7D8F5] font-sans text-lg mb-6">
               Touching lives through Football
             </p>
