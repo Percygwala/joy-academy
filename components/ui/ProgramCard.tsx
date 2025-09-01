@@ -25,6 +25,11 @@ export default function ProgramCard({ title, price, description, frequency, href
   }
   const fileName = imageFileMap[normalizedTitle] ?? `${title.toLowerCase()}.jpg`
   const imageSrc = `${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/${fileName}`
+  
+  // Debug logging for image paths
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    console.log(`Image path for ${title}:`, imageSrc, 'File:', fileName);
+  }
 
   return (
     <motion.div
