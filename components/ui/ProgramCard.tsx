@@ -68,7 +68,7 @@ export default function ProgramCard({ title, price, description, frequency, href
           </p>
           <span className="text-white/90 text-xl sm:text-2xl font-bold">»»</span>
         </div>
-        <p className="text-white/80 font-sans text-sm mt-2 line-clamp-2">
+        <p className="text-white/80 font-sans text-sm mt-2 line-clamp-2 group-hover:line-clamp-none group-hover:bg-black/60 group-hover:p-2 group-hover:rounded group-hover:transition-all group-hover:duration-300">
           {description}
         </p>
         <p className="text-white/70 font-sans text-xs mt-2">{frequency}</p>
