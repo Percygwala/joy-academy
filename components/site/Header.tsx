@@ -38,14 +38,14 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 bg-white/50 backdrop-blur-md z-50 shadow-sm">
-            <div className="flex items-center px-4 py-4 max-w-7xl mx-auto">
+            <div className="flex items-center px-3 sm:px-4 py-3 sm:py-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="flex-shrink-0 min-w-0 flex-1">
+        <div className="flex-shrink-0">
           <Link href="/" className="hover:opacity-80 transition-opacity duration-200 block">
             <img 
               src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogo.svg`}
               alt="Joy Football Academy Logo" 
-              className="h-12 md:h-16 w-auto object-contain"
+              className="h-10 sm:h-12 md:h-16 w-auto object-contain"
               style={{ minWidth: 'auto', maxWidth: 'none' }}
             />
           </Link>
