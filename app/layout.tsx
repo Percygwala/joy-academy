@@ -94,11 +94,22 @@ export default function RootLayout({
               // Prevent MutationObserver errors
               if (typeof window !== 'undefined') {
                 window.addEventListener('error', function(e) {
-                  if (e.message.includes('MutationObserver')) {
+                  if (e.message && e.message.includes('MutationObserver')) {
                     e.preventDefault();
                     return false;
                   }
                 });
+                
+                // Additional error handling for MutationObserver
+                if (window.MutationObserver) {
+                  const originalObserve = window.MutationObserver.prototype.observe;
+                  window.MutationObserver.prototype.observe = function(target, options) {
+                    if (target && target.nodeType === 1) {
+                      return originalObserve.call(this, target, options);
+                    }
+                    return;
+                  };
+                }
               }
             `,
           }}
