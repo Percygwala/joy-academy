@@ -17,7 +17,7 @@ export default function ProgramCard({ title, price, description, frequency, href
     U6: 'U6.jpg',
     U9: 'U9.jpg',
     U11: 'U11.jpg',
-    U13: 'U13.png',
+    U13: 'sports-results.png',
     U15: 'U15.png',
     U17: 'U17.png',
     U19: 'U19.png',
