@@ -39,7 +39,7 @@ const pillars = [
 ]
 
 export default function Home() {
-  // Force rebuild for GitHub Pages deployment with age group info
+  // Force rebuild for Vercel deployment with MutationObserver fix
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
