@@ -9,7 +9,7 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false,
   fallback: ["system-ui", "arial"],
 });
 
@@ -17,7 +17,7 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false,
   fallback: ["system-ui", "arial"],
 });
 
