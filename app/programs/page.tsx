@@ -158,7 +158,7 @@ export default function Programs() {
                 Up to 3x a Week
               </h2>
               <p className="text-xl text-[#0B2239]/80 font-sans">
-                Includes morning conditioning for serious players
+                Includes conditioning
               </p>
             </div>
           </AnimatedSection>
