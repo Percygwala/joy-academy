@@ -93,23 +93,32 @@ export default function RootLayout({
             __html: `
               // Prevent MutationObserver errors
               if (typeof window !== 'undefined') {
+                // Override MutationObserver to prevent errors
+                if (window.MutationObserver) {
+                  const OriginalMutationObserver = window.MutationObserver;
+                  window.MutationObserver = function(callback) {
+                    return new OriginalMutationObserver(function(mutations, observer) {
+                      try {
+                        callback(mutations, observer);
+                      } catch (error) {
+                        // Silently handle any errors
+                        console.warn('MutationObserver error handled:', error.message);
+                      }
+                    });
+                  };
+                  
+                  // Copy prototype methods
+                  window.MutationObserver.prototype = OriginalMutationObserver.prototype;
+                  window.MutationObserver.CONSTANTS = OriginalMutationObserver.CONSTANTS;
+                }
+                
+                // Global error handler
                 window.addEventListener('error', function(e) {
                   if (e.message && e.message.includes('MutationObserver')) {
                     e.preventDefault();
                     return false;
                   }
                 });
-                
-                // Additional error handling for MutationObserver
-                if (window.MutationObserver) {
-                  const originalObserve = window.MutationObserver.prototype.observe;
-                  window.MutationObserver.prototype.observe = function(target, options) {
-                    if (target && target.nodeType === 1) {
-                      return originalObserve.call(this, target, options);
-                    }
-                    return;
-                  };
-                }
               }
             `,
           }}
