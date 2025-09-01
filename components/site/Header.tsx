@@ -38,20 +38,21 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 bg-white/50 backdrop-blur-md z-50 shadow-sm">
-            <div className="grid grid-cols-12 items-center px-4 py-4 max-w-7xl mx-auto">
+            <div className="flex items-center px-4 py-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="col-span-8 flex justify-start">
-          <Link href="/" className="hover:opacity-80 transition-opacity duration-200">
+        <div className="flex-shrink-0 min-w-0 flex-1">
+          <Link href="/" className="hover:opacity-80 transition-opacity duration-200 block">
             <img 
               src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogo.svg`}
               alt="Joy Football Academy Logo" 
-              className="h-12 md:h-16 w-auto object-contain max-w-none"
+              className="h-12 md:h-16 w-auto object-contain"
+              style={{ minWidth: 'auto', maxWidth: 'none' }}
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8 justify-center col-span-2">
+        <nav className="hidden md:flex space-x-8 justify-center mx-8">
           {navLinks.map((link) => {
             const isActive = isActiveLink(link.href)
             return (
@@ -74,7 +75,7 @@ export default function Header() {
         </nav>
 
         {/* CTA Button - Desktop */}
-        <div className="hidden md:flex justify-end col-span-2">
+        <div className="hidden md:block">
           <Link
             href="/enrol/"
             className="bg-[#D7263D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans"
@@ -86,7 +87,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 col-span-4 col-start-9 flex justify-end"
+          className="md:hidden p-2 text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 ml-auto"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
