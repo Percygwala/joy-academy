@@ -38,8 +38,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 bg-white/50 backdrop-blur-md z-50 shadow-sm">
-            <div className="flex items-center px-3 sm:px-4 py-3 sm:py-4 max-w-7xl mx-auto">
-        {/* Logo */}
+            <div className="flex items-center justify-between px-3 sm:px-4 py-3 sm:py-4 max-w-7xl mx-auto">
+        {/* Logo - Left Side */}
         <div className="flex-shrink-0 flex items-center">
           <Link href="/" className="hover:opacity-80 transition-opacity duration-200 block">
             <img 
@@ -51,51 +51,54 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8 justify-center mx-8">
-          {navLinks.map((link) => {
-            const isActive = isActiveLink(link.href)
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`transition-colors duration-200 font-sans font-medium text-lg relative group ${
-                  isActive 
-                    ? 'text-[#D7263D] font-semibold underline decoration-2 underline-offset-4' 
-                    : 'text-[#0B2239] hover:text-[#D7263D]'
-                }`}
-              >
-                {link.label}
-                {!isActive && (
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#D7263D] transition-all duration-200 group-hover:w-full"></span>
-                )}
-              </Link>
-            )
-          })}
-        </nav>
+        {/* Right Side - Navigation & CTA */}
+        <div className="flex items-center space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {navLinks.map((link) => {
+              const isActive = isActiveLink(link.href)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`transition-colors duration-200 font-sans font-medium text-lg relative group ${
+                    isActive 
+                      ? 'text-[#D7263D] font-semibold underline decoration-2 underline-offset-4' 
+                      : 'text-[#0B2239] hover:text-[#D7263D]'
+                  }`}
+                >
+                  {link.label}
+                  {!isActive && (
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#D7263D] transition-all duration-200 group-hover:w-full"></span>
+                  )}
+                </Link>
+              )
+            })}
+          </nav>
 
-        {/* CTA Button - Desktop */}
-        <div className="hidden md:block">
-          <Link
-            href="/enrol/"
-            className="bg-[#D7263D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans"
+          {/* CTA Button - Desktop */}
+          <div className="hidden md:block">
+            <Link
+              href="/enrol/"
+              className="bg-[#D7263D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans"
+            >
+              Join Now
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200"
+            aria-label="Toggle menu"
           >
-            Join Now
-          </Link>
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden p-2 text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 ml-auto"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
       </div>
 
       {/* Mobile Navigation */}
