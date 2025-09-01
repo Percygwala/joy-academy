@@ -47,7 +47,7 @@ export default function Home() {
         {/* Background Image */}
                     <div className="absolute inset-0">
               <img
-                src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/image.png`}
+                src={`${process.env.NODE_ENV === 'production' ? '/jf-academy-website' : ''}/images/image.png`}
                 alt="Joy Football Academy players training"
                 className="w-full h-full object-cover"
               />
