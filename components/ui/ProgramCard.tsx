@@ -24,7 +24,8 @@ export default function ProgramCard({ title, price, description, frequency, href
     'FOOTBALL TRAINING PROGRAMS': 'full-shot-children-laying-grass.png',
   }
   const fileName = imageFileMap[normalizedTitle] ?? `${title.toLowerCase()}.jpg`
-  const imageSrc = `${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/${fileName}`
+  const cacheBuster = process.env.NODE_ENV === 'production' ? `?v=${Date.now()}` : ''
+  const imageSrc = `${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/${fileName}${cacheBuster}`
   
   // Debug logging for image paths
   if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
