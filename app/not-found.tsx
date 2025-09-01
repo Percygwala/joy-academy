@@ -41,13 +41,7 @@ export default function NotFound() {
               View Programs
             </Link>
             <span className="hidden sm:inline text-[#0B2239]/50">•</span>
-            <Link 
-              href="/coaches" 
-              className="text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium"
-            >
-              Meet Our Coaches
-            </Link>
-            <span className="hidden sm:inline text-[#0B2239]/50">•</span>
+
             <Link 
               href="/enrol" 
               className="text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium"

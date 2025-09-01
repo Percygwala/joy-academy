@@ -35,7 +35,7 @@ joy-football-academy/
 │   ├── layout.tsx         # Root layout with metadata
 │   ├── page.tsx           # Home page
 │   ├── programs/          # Programs & pricing page
-│   ├── coaches/           # Coaches & contact page
+
 │   ├── enrol/             # Enrolment page
 │   └── not-found.tsx      # 404 page
 ├── components/            # Reusable components
@@ -46,7 +46,7 @@ joy-football-academy/
 │   │   ├── Button.tsx    # Reusable button component
 │   │   ├── AnimatedSection.tsx # Animation wrapper
 │   │   ├── ProgramCard.tsx     # Program display card
-│   │   └── CoachCard.tsx       # Coach profile card
+
 │   └── forms/            # Form components
 │       └── EnrolForm.tsx # Enrolment form
 ├── public/               # Static assets
@@ -112,11 +112,7 @@ joy-football-academy/
 - Two categories: Twice a Week & Up to 3x a Week
 - Interactive program cards
 
-### Coaches (`/coaches`)
-- Coach profiles and bios
-- Contact information
-- Location details
-- Professional coaching team showcase
+
 
 ### Enrol (`/enrol`)
 - Interactive enrolment form

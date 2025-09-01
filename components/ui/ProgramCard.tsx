@@ -12,42 +12,57 @@ interface ProgramCardProps {
 }
 
 export default function ProgramCard({ title, price, description, frequency, href }: ProgramCardProps) {
+  const normalizedTitle = title.toUpperCase()
+  const imageFileMap: Record<string, string> = {
+    U6: 'U6.jpg',
+    U9: 'U9.jpg',
+    U11: 'U11.jpg',
+    U13: 'u13.png',
+    U15: 'U15.png',
+    U17: 'U17.png',
+    U19: 'U19.png',
+    'FOOTBALL TRAINING PROGRAMS': 'full-shot-children-laying-grass.png',
+  }
+  const fileName = imageFileMap[normalizedTitle] ?? `${title.toLowerCase()}.jpg`
+  const imageSrc = `/jf-academy/images/${fileName}`
+
   return (
-    <motion.div 
-      className="bg-white rounded-2xl shadow-xl p-8 text-[#0B2239] hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 group border border-gray-100"
-      whileHover={{ 
-        scale: 1.03,
-        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-      }}
+    <motion.div
+      className="relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+      whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="mb-6">
-        <motion.div 
-          className="w-16 h-16 bg-gradient-to-br from-[#D7263D] to-[#FFD23F] rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-          whileHover={{ scale: 1.1 }}
-        >
-          <span className="text-white text-xl font-bold">{title}</span>
-        </motion.div>
-        <h3 className="font-heading text-3xl text-[#0B2239] mb-3 text-center font-bold">
+      {/* Background Image */}
+      <img
+        src={imageSrc}
+        alt={`${title} age group`}
+        className="absolute inset-0 w-full h-full object-cover"
+        onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/jf-academy/images/U6.jpg' }}
+      />
+
+      {/* Overlay Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+      {/* Content */}
+      <div className="absolute bottom-0 left-0 right-0 p-5">
+        <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white drop-shadow-md">
           {title}
         </h3>
-        <p className="text-[#D7263D] font-bold text-3xl mb-2 text-center">
-          {price}
+        <div className="mt-1 flex items-center gap-2">
+          <p className="text-white/90 text-lg sm:text-xl font-bold drop-shadow-md">
+            {price}
+          </p>
+          <span className="text-white/90 text-xl sm:text-2xl font-bold">»»</span>
+        </div>
+        <p className="text-white/80 font-sans text-sm mt-2 line-clamp-2">
+          {description}
         </p>
-        <p className="text-sm text-[#0B2239]/70 font-sans text-center bg-[#A7D8F5]/20 px-4 py-2 rounded-full">
-          {frequency}
-        </p>
+        <p className="text-white/70 font-sans text-xs mt-2">{frequency}</p>
       </div>
 
-      <p className="text-[#0B2239]/80 mb-8 font-sans leading-relaxed text-center">
-        {description}
-      </p>
-
-      <Link
-        href={href}
-        className="bg-gradient-to-r from-[#D7263D] to-[#B91C3A] text-white px-8 py-4 rounded-xl font-bold hover:from-[#B91C3A] hover:to-[#A01530] transition-all duration-300 transform hover:scale-105 font-sans text-center block w-full shadow-lg"
-      >
-        Enrol Now
+      {/* Make entire card clickable */}
+      <Link href={href} className="absolute inset-0" aria-label={`Enrol for ${title}`}>
+        <span className="sr-only">Enrol Now</span>
       </Link>
     </motion.div>
   )

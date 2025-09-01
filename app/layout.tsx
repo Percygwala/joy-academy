@@ -3,6 +3,7 @@ import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+// import Partners from "@/components/site/Partners";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -77,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="icon" href="/jf-academy/favicon.ico" />
         <link rel="apple-touch-icon" href="/jf-academy/apple-touch-icon.png" />
@@ -86,11 +87,13 @@ export default function RootLayout({
       </head>
       <body
         className={`${montserrat.variable} ${inter.variable} bg-[#A7D8F5] text-[#0B2239] min-h-screen antialiased flex flex-col`}
+        suppressHydrationWarning={true}
       >
         <Header />
         <main className="flex-1">
           {children}
         </main>
+        {/* <Partners /> */}
         <Footer />
       </body>
     </html>
