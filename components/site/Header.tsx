@@ -38,18 +38,20 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 bg-white/50 backdrop-blur-md z-50 shadow-sm">
-      <div className="flex justify-between items-center px-4 py-8 max-w-7xl mx-auto">
+      <div className="flex items-center px-4 py-8 max-w-7xl mx-auto">
         {/* Logo */}
-        <Link href="/" className="hover:opacity-80 transition-opacity duration-200 flex-shrink-0 overflow-visible min-w-0">
-          <img 
-            src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogo.svg`}
-            alt="Joy Football Academy Logo" 
-            className="h-16 w-auto max-w-[300px] min-w-[200px] object-contain"
-          />
-        </Link>
+        <div className="flex-shrink-0 mr-8">
+          <Link href="/" className="hover:opacity-80 transition-opacity duration-200">
+            <img 
+              src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogo.svg`}
+              alt="Joy Football Academy Logo" 
+              className="h-16 w-auto object-contain"
+            />
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 flex-1 justify-center">
           {navLinks.map((link) => {
             const isActive = isActiveLink(link.href)
             return (
@@ -72,7 +74,7 @@ export default function Header() {
         </nav>
 
         {/* CTA Button - Desktop */}
-        <div className="hidden md:block">
+        <div className="hidden md:block ml-auto">
           <Link
             href="/enrol/"
             className="bg-[#D7263D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans"
