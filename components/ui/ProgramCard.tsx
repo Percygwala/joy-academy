@@ -25,7 +25,7 @@ export default function ProgramCard({ title, price, description, frequency, href
   }
   const fileName = imageFileMap[normalizedTitle] ?? `${title.toLowerCase()}.jpg`
   const cacheBuster = process.env.NODE_ENV === 'production' ? `?v=${Date.now()}` : ''
-  const imageSrc = `${process.env.NODE_ENV === 'production' ? '/jf-academy-website' : ''}/images/${fileName}${cacheBuster}`
+  const imageSrc = `/images/${fileName}`
   
   // Debug logging for image paths
   if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
@@ -45,7 +45,7 @@ export default function ProgramCard({ title, price, description, frequency, href
         className="absolute inset-0 w-full h-full object-cover"
         onError={(e) => { 
           console.warn(`Failed to load image for ${title}:`, imageSrc);
-          (e.currentTarget as HTMLImageElement).src = `${process.env.NODE_ENV === 'production' ? '/jf-academy-website' : ''}/images/U6.jpg`;
+          (e.currentTarget as HTMLImageElement).src = `/images/U6.jpg`;
         }}
         onLoad={() => {
           if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {

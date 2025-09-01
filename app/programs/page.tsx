@@ -94,7 +94,7 @@ export default function Programs() {
       {/* Programs Banner */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src={`${process.env.NODE_ENV === 'production' ? '/jf-academy-website' : ''}/images/full.png`}
+          src="/images/full.png"
           alt="Football training programs" 
           className="w-full h-full object-cover"
         />
