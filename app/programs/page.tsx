@@ -34,7 +34,7 @@ const twiceAWeekPrograms = [
   {
     title: "U11",
     price: "R1,050/month",
-    description: "Technique, tactical foundations, team play.",
+    description: "Technique, tactical foundations, team work.",
     frequency: "Twice a Week",
                     href: "/enroll/?program=U11"
   }
