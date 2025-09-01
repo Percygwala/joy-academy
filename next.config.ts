@@ -3,8 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/jf-academy' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/jf-academy/' : '',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
     remotePatterns: [
