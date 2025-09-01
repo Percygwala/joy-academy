@@ -38,9 +38,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 bg-white/50 backdrop-blur-md z-50 shadow-sm">
-            <div className="grid grid-cols-3 items-center px-4 py-4 max-w-7xl mx-auto">
+            <div className="grid grid-cols-12 items-center px-4 py-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="flex justify-start">
+        <div className="col-span-4 flex justify-start">
           <Link href="/" className="hover:opacity-80 transition-opacity duration-200">
             <img 
               src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogo.svg`}
@@ -51,7 +51,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8 justify-center">
+        <nav className="hidden md:flex space-x-8 justify-center col-span-4">
           {navLinks.map((link) => {
             const isActive = isActiveLink(link.href)
             return (
@@ -74,7 +74,7 @@ export default function Header() {
         </nav>
 
         {/* CTA Button - Desktop */}
-        <div className="hidden md:flex justify-end">
+        <div className="hidden md:flex justify-end col-span-4">
           <Link
             href="/enrol/"
             className="bg-[#D7263D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans"
@@ -86,7 +86,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200"
+          className="md:hidden p-2 text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 col-span-4 col-start-9"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
