@@ -37,7 +37,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 bg-white z-50 shadow-sm">
+    <header className="sticky top-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
       <div className="flex justify-between items-center px-8 py-8 max-w-6xl mx-auto">
         {/* Logo */}
         <Link href="/" className="hover:opacity-80 transition-opacity duration-200 flex-shrink-0 overflow-visible">
