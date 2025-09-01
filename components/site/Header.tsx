@@ -43,7 +43,7 @@ export default function Header() {
         <div className="flex-shrink-0 flex items-center">
           <Link href="/" className="hover:opacity-80 transition-opacity duration-200 block">
             <img 
-              src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogob.png`}
+              src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogob.png?v=${Date.now()}`}
               alt="Joy Football Academy Logo" 
               className="h-10 sm:h-12 md:h-16 w-auto object-contain"
               style={{ minWidth: 'auto', maxWidth: 'none' }}

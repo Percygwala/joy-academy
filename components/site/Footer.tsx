@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="mb-4 flex justify-center md:justify-start">
               <img 
-                src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogow.png`}
+                src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogow.png?v=${Date.now()}`}
                 alt="Joy Football Academy Logo" 
                 className="h-12 sm:h-14 md:h-16 w-auto max-w-[250px] sm:max-w-[300px]"
               />
