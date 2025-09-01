@@ -39,6 +39,7 @@ const pillars = [
 ]
 
 export default function Home() {
+  // Force rebuild for GitHub Pages deployment
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
