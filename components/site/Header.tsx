@@ -45,8 +45,17 @@ export default function Header() {
             <img 
               src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogo.svg`}
               alt="Joy Football Academy Logo" 
-              className="h-10 sm:h-12 md:h-16 w-auto object-contain"
-              style={{ minWidth: 'auto', maxWidth: 'none' }}
+              className="h-10 sm:h-12 md:h-16 w-auto"
+              style={{ 
+                minWidth: 'auto', 
+                maxWidth: 'none',
+                width: 'auto',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'left center',
+                transform: 'scale(1.1)',
+                transformOrigin: 'left center'
+              }}
             />
           </Link>
         </div>
