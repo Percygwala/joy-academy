@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "out",
-  "framework": "static",
+  "framework": "nextjs",
   "installCommand": "npm install"
 }
