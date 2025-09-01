@@ -42,7 +42,15 @@ export default function ProgramCard({ title, price, description, frequency, href
         src={imageSrc}
         alt={`${title} age group`}
         className="absolute inset-0 w-full h-full object-cover"
-        onError={(e) => { (e.currentTarget as HTMLImageElement).src = `${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/U6.jpg` }}
+        onError={(e) => { 
+          console.warn(`Failed to load image for ${title}:`, imageSrc);
+          (e.currentTarget as HTMLImageElement).src = `${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/U6.jpg`;
+        }}
+        onLoad={() => {
+          if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+            console.log(`Successfully loaded image for ${title}:`, imageSrc);
+          }
+        }}
       />
 
       {/* Overlay Gradient */}
