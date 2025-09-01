@@ -17,11 +17,11 @@ export default function Footer() {
           {/* Academy Info */}
           <div className="text-center md:text-left">
             <div className="mb-4 flex justify-center md:justify-start">
-              <img 
-                src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogow.png?v=${Date.now()}`}
-                alt="Joy Football Academy Logo" 
-                className="h-12 sm:h-14 md:h-16 w-auto max-w-[250px] sm:max-w-[300px]"
-              />
+                      <img 
+          src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/JFlogow.png${process.env.NODE_ENV === 'production' ? `?v=${Date.now()}` : ''}`}
+          alt="Joy Football Academy Logo" 
+          className="h-12 sm:h-14 md:h-16 w-auto max-w-[250px] sm:max-w-[300px]"
+        />
             </div>
             <p className="text-[#A7D8F5] font-sans text-lg mb-6">
               Touching lives through Football
