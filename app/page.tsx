@@ -39,7 +39,7 @@ const pillars = [
 ]
 
 export default function Home() {
-  // Force rebuild for Vercel deployment with static framework fix
+  // Force rebuild for Vercel deployment with fresh commit
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
