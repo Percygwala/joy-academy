@@ -65,10 +65,10 @@ export default function Home() {
               Touching lives through Football
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/programs" variant="primary" size="lg">
+              <Button href="/programs/" variant="primary" size="lg">
                 Explore Programs
               </Button>
-              <Button href="/enrol" variant="white" size="lg">
+              <Button href="/enrol/" variant="white" size="lg">
                 Enrol Now
               </Button>
             </div>

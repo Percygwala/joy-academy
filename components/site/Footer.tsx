@@ -83,7 +83,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.02, x: 5 }}
                 transition={{ duration: 0.2 }}
               >
-                <a href="/programs" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
+                <a href="/programs/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
                   Programs & Pricing
                 </a>
               </motion.p>
@@ -93,7 +93,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.02, x: 5 }}
                 transition={{ duration: 0.2 }}
               >
-                <a href="/enrol" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
+                <a href="/enrol/" className="hover:text-[#D7263D] transition-colors duration-200 text-lg">
                   Enrol Now
                 </a>
               </motion.p>

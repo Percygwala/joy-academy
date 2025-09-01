@@ -1,13 +1,18 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -19,11 +24,12 @@ export default function Header() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/programs', label: 'Programs' },
-    { href: '/enrol', label: 'Enrol' },
+    { href: '/programs/', label: 'Programs' },
+    { href: '/enrol/', label: 'Enrol' },
   ]
 
   const isActiveLink = (href: string) => {
+    if (!mounted) return false
     if (href === '/') {
       return pathname === '/'
     }
@@ -68,7 +74,7 @@ export default function Header() {
         {/* CTA Button - Desktop */}
         <div className="hidden md:block">
           <Link
-            href="/enrol"
+            href="/enrol/"
             className="bg-[#D7263D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans"
           >
             Join Now
@@ -112,7 +118,7 @@ export default function Header() {
             })}
             <div className="pt-4 border-t border-gray-200">
               <Link
-                href="/enrol"
+                href="/enrol/"
                 className="bg-[#D7263D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans block text-center"
                 onClick={closeMenu}
               >

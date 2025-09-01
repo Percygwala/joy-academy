@@ -22,21 +22,21 @@ const twiceAWeekPrograms = [
     price: "R850/month",
     description: "Foundational skills, fun-focused, ball familiarity.",
     frequency: "Twice a Week",
-    href: "/enrol?program=U6"
+                    href: "/enrol/?program=U6"
   },
   {
     title: "U9",
     price: "R950/month",
     description: "Skill development, small-sided games, coordination.",
     frequency: "Twice a Week",
-    href: "/enrol?program=U9"
+                    href: "/enrol/?program=U9"
   },
   {
     title: "U11",
     price: "R1,050/month",
     description: "Technique, tactical foundations, team play.",
     frequency: "Twice a Week",
-    href: "/enrol?program=U11"
+                    href: "/enrol/?program=U11"
   }
 ]
 
@@ -46,28 +46,28 @@ const threeTimesAWeekPrograms = [
     price: "R1,350/month",
     description: "Advanced techniques, conditioning & match prep.",
     frequency: "Up to 3x a Week",
-    href: "/enrol?program=U13"
+                    href: "/enrol/?program=U13"
   },
   {
     title: "U15",
     price: "R1,450/month",
     description: "Strength & tactics, pathway focus.",
     frequency: "Up to 3x a Week",
-    href: "/enrol?program=U15"
+                    href: "/enrol/?program=U15"
   },
   {
     title: "U17",
     price: "R1,550/month",
     description: "High-performance training, trials & exposure.",
     frequency: "Up to 3x a Week",
-    href: "/enrol?program=U17"
+                    href: "/enrol/?program=U17"
   },
   {
     title: "U19",
     price: "R1,800/month",
     description: "Elite prep & life-after-football support.",
     frequency: "Up to 3x a Week",
-    href: "/enrol?program=U19"
+                    href: "/enrol/?program=U19"
   }
 ]
 

@@ -35,7 +35,7 @@ export default function NotFound() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link 
-              href="/programs" 
+              href="/programs/" 
               className="text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium"
             >
               View Programs
@@ -43,7 +43,7 @@ export default function NotFound() {
             <span className="hidden sm:inline text-[#0B2239]/50">•</span>
 
             <Link 
-              href="/enrol" 
+              href="/enrol/" 
               className="text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium"
             >
               Enrol Now
