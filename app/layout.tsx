@@ -9,12 +9,16 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
@@ -84,6 +88,21 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/jf-academy/apple-touch-icon.png" />
         <meta name="theme-color" content="#D7263D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Prevent MutationObserver errors
+              if (typeof window !== 'undefined') {
+                window.addEventListener('error', function(e) {
+                  if (e.message.includes('MutationObserver')) {
+                    e.preventDefault();
+                    return false;
+                  }
+                });
+              }
+            `,
+          }}
+        />
       </head>
       <body
         className={`${montserrat.variable} ${inter.variable} bg-[#A7D8F5] text-[#0B2239] min-h-screen antialiased flex flex-col`}
