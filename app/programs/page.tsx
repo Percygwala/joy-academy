@@ -129,6 +129,9 @@ export default function Programs() {
             <p className="text-xl text-[#0B2239]/80 font-sans">
               Perfect for beginners and developing players
             </p>
+            <p className="text-lg text-[#0B2239]/70 font-sans mt-2">
+              Under 6 to Under 11 boys and girls combined
+            </p>
           </div>
         </AnimatedSection>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
