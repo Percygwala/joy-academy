@@ -39,7 +39,7 @@ const pillars = [
 ]
 
 export default function Home() {
-  // Force rebuild for GitHub Pages deployment
+  // Force rebuild for GitHub Pages deployment with new logos
   return (
     <div className="min-h-screen">
       {/* Hero Section */}

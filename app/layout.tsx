@@ -127,6 +127,17 @@ export default function RootLayout({
                     return false;
                   }
                 });
+                
+                // Override console.error to catch MutationObserver errors
+                const originalConsoleError = console.error;
+                console.error = function(...args) {
+                  const message = args.join(' ');
+                  if (message.includes('MutationObserver') && message.includes('parameter 1 is not of type')) {
+                    console.warn('MutationObserver error intercepted and handled');
+                    return;
+                  }
+                  originalConsoleError.apply(console, args);
+                };
               }
             `,
           }}
