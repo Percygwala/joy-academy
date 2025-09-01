@@ -69,8 +69,8 @@ export default function Home() {
               <Button href="/programs/" variant="primary" size="lg">
                 Explore Programs
               </Button>
-              <Button href="/enrol/" variant="white" size="lg">
-                Enrol Now
+              <Button href="/enroll/" variant="white" size="lg">
+                Enroll Now
               </Button>
             </div>
           </AnimatedSection>

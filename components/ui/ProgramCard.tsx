@@ -75,8 +75,8 @@ export default function ProgramCard({ title, price, description, frequency, href
       </div>
 
       {/* Make entire card clickable */}
-      <Link href={href} className="absolute inset-0" aria-label={`Enrol for ${title}`}>
-        <span className="sr-only">Enrol Now</span>
+      <Link href={href} className="absolute inset-0" aria-label={`Enroll for ${title}`}>
+        <span className="sr-only">Enroll Now</span>
       </Link>
     </motion.div>
   )

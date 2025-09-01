@@ -1,22 +1,22 @@
-import EnrolForm from '@/components/forms/EnrolForm'
+import EnrollForm from '@/components/forms/EnrolForm'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Button from '@/components/ui/Button'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Enrol Now — Joy Football Academy",
-  description: "Join Joy Football Academy today! Complete our simple enrolment form to register your child for professional football training and development.",
+  title: "Enroll Now — Joy Football Academy",
+  description: "Join Joy Football Academy today! Complete our simple enrollment form to register your child for professional football training and development.",
   openGraph: {
-    title: "Enrol Now — Joy Football Academy",
-    description: "Join Joy Football Academy today! Complete our simple enrolment form to register your child for professional football training and development.",
+    title: "Enroll Now — Joy Football Academy",
+    description: "Join Joy Football Academy today! Complete our simple enrollment form to register your child for professional football training and development.",
   },
   twitter: {
-    title: "Enrol Now — Joy Football Academy",
-    description: "Join Joy Football Academy today! Complete our simple enrolment form to register your child for professional football training and development.",
+    title: "Enroll Now — Joy Football Academy",
+    description: "Join Joy Football Academy today! Complete our simple enrollment form to register your child for professional football training and development.",
   },
 }
 
-export default function Enrol() {
+export default function Enroll() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#A7D8F5] to-[#8BC4E8]">
       {/* Page Header */}
@@ -24,7 +24,7 @@ export default function Enrol() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-heading">
-              Enrol at Joy Football Academy
+              Enroll at Joy Football Academy
             </h1>
             <p className="text-xl lg:text-2xl max-w-4xl mx-auto font-sans leading-relaxed">
               Complete the form below to register your child with us and start their football journey.
@@ -36,11 +36,11 @@ export default function Enrol() {
       {/* Section Divider */}
       <hr className="border-t border-[#0B2239]/20" />
 
-      {/* Enrolment Banner */}
+              {/* Enrollment Banner */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
           src={`${process.env.NODE_ENV === 'production' ? '/jf-academy' : ''}/images/soccer-player-action-stadium.png`}
-          alt="Enrolment banner" 
+                      alt="Enrollment banner" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40"></div>
@@ -56,7 +56,7 @@ export default function Enrol() {
         </div>
       </section>
 
-      {/* Enrolment Form Section */}
+              {/* Enrollment Form Section */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <AnimatedSection>
           <div className="text-center mb-12">
@@ -69,7 +69,7 @@ export default function Enrol() {
           </div>
         </AnimatedSection>
         
-        <EnrolForm />
+                      <EnrollForm />
       </section>
 
       {/* Section Divider */}
@@ -88,7 +88,7 @@ export default function Enrol() {
                   Easy Registration
                 </h3>
                 <p className="text-[#0B2239]/80 font-sans leading-relaxed">
-                  Simple and straightforward enrolment process designed for your convenience.
+                  Simple and straightforward enrollment process designed for your convenience.
                 </p>
               </div>
             </AnimatedSection>
@@ -132,10 +132,10 @@ export default function Enrol() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-heading">
-              Questions About Enrolment?
+              Questions About Enrollment?
             </h2>
             <p className="text-xl mb-10 font-sans max-w-3xl mx-auto">
-              Our team is here to help you with any questions about our programs, pricing, or the enrolment process.
+              Our team is here to help you with any questions about our programs, pricing, or the enrollment process.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

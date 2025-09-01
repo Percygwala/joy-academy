@@ -14,7 +14,7 @@ interface FormData {
   notes: string
 }
 
-export default function EnrolForm() {
+export default function EnrollForm() {
   const [formData, setFormData] = useState<FormData>({
     parentName: '',
     parentEmail: '',
@@ -36,7 +36,7 @@ export default function EnrolForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Enrolment Form Data:', formData)
+    console.log('Enrollment Form Data:', formData)
     setIsSubmitted(true)
     
     // Reset form after submission
@@ -241,7 +241,7 @@ export default function EnrolForm() {
               size="lg"
               className="w-full"
             >
-              Submit Enrolment
+              Submit Enrollment
             </Button>
           </motion.div>
         </div>

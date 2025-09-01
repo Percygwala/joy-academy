@@ -25,7 +25,7 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/programs/', label: 'Programs' },
-    { href: '/enrol/', label: 'Enrol' },
+    { href: '/enroll/', label: 'Enroll' },
   ]
 
   const isActiveLink = (href: string) => {
@@ -79,7 +79,7 @@ export default function Header() {
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
             <Link
-              href="/enrol/"
+              href="/enroll/"
               className="bg-[#D7263D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans"
             >
               Join Now
@@ -124,7 +124,7 @@ export default function Header() {
             })}
             <div className="pt-4 border-t border-gray-200">
               <Link
-                href="/enrol/"
+                href="/enroll/"
                 className="bg-[#D7263D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#B91C3A] transition-colors duration-200 font-sans block text-center"
                 onClick={closeMenu}
               >

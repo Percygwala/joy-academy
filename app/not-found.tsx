@@ -42,12 +42,12 @@ export default function NotFound() {
             </Link>
             <span className="hidden sm:inline text-[#0B2239]/50">•</span>
 
-            <Link 
-              href="/enrol/" 
-              className="text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium"
-            >
-              Enrol Now
-            </Link>
+                            <Link
+                  href="/enroll/"
+                  className="text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium"
+                >
+                  Enroll Now
+                </Link>
           </div>
         </div>
 
