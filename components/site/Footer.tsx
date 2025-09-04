@@ -73,10 +73,10 @@ export default function Footer() {
                 transition={{ duration: 0.2 }}
               >
                 <a
-                  href="mailto:shange.kzn@gmail.com"
+                  href="mailto:admin@joyfootballacademy.co.za"
                   className="hover:text-[#D7263D] transition-colors duration-200 text-lg"
                 >
-                  ✉️ shange.kzn@gmail.com
+                  ✉️ admin@joyfootballacademy.co.za
                 </a>
               </motion.p>
               <p className="font-sans text-lg">

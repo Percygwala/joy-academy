@@ -156,7 +156,7 @@ This project is private and proprietary to Joy Football Academy.
 ## 📞 Contact
 
 - **Phone**: 065 974 2376
-- **Email**: shange.kzn@gmail.com
+- **Email**: admin@joyfootballacademy.co.za
 - **Location**: Treverton, KwaZulu-Natal, South Africa
 
 ## 🙏 Acknowledgments

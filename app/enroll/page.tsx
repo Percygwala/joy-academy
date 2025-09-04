@@ -147,7 +147,7 @@ export default function Enroll() {
                 Call Us: 065 974 2376
               </Button>
               <Button
-                href="mailto:shange.kzn@gmail.com"
+                href="mailto:admin@joyfootballacademy.co.za"
                 variant="secondary"
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-[#D7263D]"
