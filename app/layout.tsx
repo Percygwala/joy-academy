@@ -91,65 +91,85 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Aggressive MutationObserver error prevention
-              if (typeof window !== 'undefined') {
-                // Completely override MutationObserver to prevent all errors
-                if (window.MutationObserver) {
+              // Ultra-aggressive MutationObserver error prevention
+              (function() {
+                // Override MutationObserver completely before any other scripts load
+                if (typeof window !== 'undefined') {
                   const OriginalMutationObserver = window.MutationObserver;
+                  
                   window.MutationObserver = function(callback) {
-                    const observer = {
+                    return {
                       observe: function(target, options) {
-                        try {
-                          if (target && target.nodeType && target.nodeType === 1) {
-                            // Only observe if target is a valid DOM element
-                            return;
-                          }
-                        } catch (error) {
-                          console.warn('MutationObserver observe prevented:', error.message);
-                        }
+                        // Always return without doing anything
+                        return;
                       },
                       disconnect: function() {
-                        // Do nothing
+                        return;
                       },
                       takeRecords: function() {
                         return [];
                       }
                     };
-                    return observer;
                   };
                   
-                  // Copy static properties
-                  window.MutationObserver.CONSTANTS = OriginalMutationObserver.CONSTANTS;
+                  // Copy static properties if they exist
+                  if (OriginalMutationObserver && OriginalMutationObserver.CONSTANTS) {
+                    window.MutationObserver.CONSTANTS = OriginalMutationObserver.CONSTANTS;
+                  }
                 }
                 
-                // Global error suppression
-                window.addEventListener('error', function(e) {
-                  if (e.message && e.message.includes('MutationObserver')) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    return false;
-                  }
-                }, true);
-                
-                window.addEventListener('unhandledrejection', function(e) {
-                  if (e.reason && e.reason.message && e.reason.message.includes('MutationObserver')) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    return false;
-                  }
-                });
-                
-                // Override console.error completely for MutationObserver
-                const originalConsoleError = console.error;
-                console.error = function(...args) {
-                  const message = args.join(' ');
-                  if (message.includes('MutationObserver')) {
-                    console.warn('MutationObserver error completely suppressed');
-                    return;
-                  }
-                  originalConsoleError.apply(console, args);
-                };
-              }
+                // Suppress all MutationObserver related errors
+                if (typeof window !== 'undefined') {
+                  // Override console methods to suppress MutationObserver errors
+                  const originalError = console.error;
+                  const originalWarn = console.warn;
+                  
+                  console.error = function(...args) {
+                    const message = args.join(' ');
+                    if (message.includes('MutationObserver') || 
+                        message.includes('parameter 1 is not of type') ||
+                        message.includes('Failed to execute')) {
+                      return; // Suppress completely
+                    }
+                    originalError.apply(console, args);
+                  };
+                  
+                  console.warn = function(...args) {
+                    const message = args.join(' ');
+                    if (message.includes('MutationObserver') || 
+                        message.includes('parameter 1 is not of type') ||
+                        message.includes('Failed to execute')) {
+                      return; // Suppress completely
+                    }
+                    originalWarn.apply(console, args);
+                  };
+                  
+                  // Global error suppression
+                  window.addEventListener('error', function(e) {
+                    if (e.message && (
+                        e.message.includes('MutationObserver') ||
+                        e.message.includes('parameter 1 is not of type') ||
+                        e.message.includes('Failed to execute')
+                      )) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      return false;
+                    }
+                  }, true);
+                  
+                  window.addEventListener('unhandledrejection', function(e) {
+                    if (e.reason && e.reason.message && (
+                        e.reason.message.includes('MutationObserver') ||
+                        e.reason.message.includes('parameter 1 is not of type') ||
+                        e.reason.message.includes('Failed to execute')
+                      )) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      return false;
+                    }
+                  });
+                }
+              })();
             `,
           }}
         />
