@@ -23,7 +23,9 @@ export default function EnrollForm() {
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_autoresponse" value="Thank you for enrolling at Joy Football Academy. We will get back to you soon." />
-        <input type="hidden" name="_next" value="/thank-you" />
+        <input type="hidden" name="_next" value="https://joyfootballacademy.co.za/thank-you" />
+        <input type="hidden" name="_subject" value="New Enrollment - Joy Football Academy" />
+        <input type="hidden" name="_cc" value="admin@joyfootballacademy.co.za" />
         
         <div className="space-y-6">
           {/* Full Name */}
