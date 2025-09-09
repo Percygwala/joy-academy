@@ -9,7 +9,6 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
-  preload: false,
   fallback: ["system-ui", "arial"],
 });
 
@@ -17,7 +16,6 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  preload: false,
   fallback: ["system-ui", "arial"],
 });
 
@@ -33,18 +31,18 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://brocodedevsza.github.io"),
+  metadataBase: new URL("https://joyfootballacademy.co.za"),
   alternates: {
-    canonical: "/jf-academy/",
+    canonical: "/",
   },
   openGraph: {
     title: "Joy Football Academy",
     description: "Touching lives through Football — Developing young players for elite football and life beyond.",
-    url: "https://brocodedevsza.github.io/jf-academy/",
+    url: "https://joyfootballacademy.co.za/",
     siteName: "Joy Football Academy",
     images: [
       {
-        url: "/jf-academy/images/og-image.jpg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Joy Football Academy - Touching lives through Football",
@@ -57,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Joy Football Academy",
     description: "Touching lives through Football.",
-    images: ["/jf-academy/images/og-image.jpg"],
+    images: ["/images/og-image.jpg"],
     creator: "@joyfootballacademy",
   },
   robots: {
@@ -84,8 +82,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <head>
-        <link rel="icon" href="/jf-academy/favicon.ico" />
-        <link rel="apple-touch-icon" href="/jf-academy/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#D7263D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
