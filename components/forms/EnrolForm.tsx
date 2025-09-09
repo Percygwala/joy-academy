@@ -1,8 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 export default function EnrollForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
   return (
     <motion.div 
       className="max-w-2xl mx-auto"
@@ -15,6 +17,7 @@ export default function EnrollForm() {
         action="https://formsubmit.co/admin@joyfootballacademy.co.za" 
         method="POST" 
         className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100"
+        onSubmit={() => setIsSubmitting(true)}
       >
         {/* FormSubmit Hidden Inputs */}
         <input type="hidden" name="_captcha" value="false" />
@@ -139,9 +142,21 @@ export default function EnrollForm() {
           >
             <button
               type="submit"
-              className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg w-full sm:w-auto transition-colors duration-200"
+              disabled={isSubmitting}
+              className={`${
+                isSubmitting 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : 'bg-red-600 hover:bg-red-700'
+              } text-white font-semibold px-6 py-3 rounded-lg w-full sm:w-auto transition-colors duration-200 flex items-center justify-center gap-2`}
             >
-              Submit Enrollment
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  Submitting...
+                </>
+              ) : (
+                'Submit Enrollment'
+              )}
             </button>
           </motion.div>
         </div>
