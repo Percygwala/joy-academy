@@ -24,7 +24,7 @@ export default function ThankYou() {
             </h1>
             
             <p className="text-xl text-[#0B2239]/80 font-sans mb-10 leading-relaxed">
-              We've received your enrollment. A confirmation email has been sent to you.
+              We&apos;ve received your enrollment. A confirmation email has been sent to you.
             </p>
             
             {/* Back to Home Button */}
