@@ -1,0 +1,94 @@
+1:"$Sreact.fragment"
+9:I[7150,[],""]
+:HL["/_next/static/media/904be59b21bd51cb-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/dd4b99ed89713317.css","style"]
+2:Ta5f,
+              // Aggressive MutationObserver error prevention
+              if (typeof window !== 'undefined') {
+                // Completely override MutationObserver to prevent all errors
+                if (window.MutationObserver) {
+                  const OriginalMutationObserver = window.MutationObserver;
+                  window.MutationObserver = function(callback) {
+                    const observer = {
+                      observe: function(target, options) {
+                        try {
+                          if (target && target.nodeType && target.nodeType === 1) {
+                            // Only observe if target is a valid DOM element
+                            return;
+                          }
+                        } catch (error) {
+                          console.warn('MutationObserver observe prevented:', error.message);
+                        }
+                      },
+                      disconnect: function() {
+                        // Do nothing
+                      },
+                      takeRecords: function() {
+                        return [];
+                      }
+                    };
+                    return observer;
+                  };
+                  
+                  // Copy static properties
+                  window.MutationObserver.CONSTANTS = OriginalMutationObserver.CONSTANTS;
+                }
+                
+                // Global error suppression
+                window.addEventListener('error', function(e) {
+                  if (e.message && e.message.includes('MutationObserver')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                  }
+                }, true);
+                
+                window.addEventListener('unhandledrejection', function(e) {
+                  if (e.reason && e.reason.message && e.reason.message.includes('MutationObserver')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                  }
+                });
+                
+                // Override console.error completely for MutationObserver
+                const originalConsoleError = console.error;
+                console.error = function(...args) {
+                  const message = args.join(' ');
+                  if (message.includes('MutationObserver')) {
+                    console.warn('MutationObserver error completely suppressed');
+                    return;
+                  }
+                  originalConsoleError.apply(console, args);
+                };
+              }
+            0:{"P":null,"b":"sHoVDhp5JDWKiNg4wLvj8","p":"","c":["","programs",""],"i":false,"f":[[["",{"children":["programs",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dd4b99ed89713317.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-scroll-behavior":"smooth","children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico"}],["$","link",null,{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],["$","meta",null,{"name":"theme-color","content":"#D7263D"}],["$","meta",null,{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}]]}],["$","body",null,{"className":"__variable_069ab3 __variable_e8ce0c bg-[#A7D8F5] text-[#0B2239] min-h-screen antialiased flex flex-col","suppressHydrationWarning":true,"children":["$L3","$L4","$L5"]}]]}]]}],{"children":["programs","$L6",{"children":["__PAGE__","$L7",{},null,false]},null,false]},null,false],"$L8",false]],"m":"$undefined","G":["$9",[]],"s":false,"S":true}
+a:I[1323,["619","static/chunks/619-ba102abea3e3d0e4.js","273","static/chunks/273-141542b25c6cde67.js","177","static/chunks/app/layout-78fc6cf2e59c0fe1.js"],"default"]
+b:I[9766,[],""]
+c:I[8924,[],""]
+d:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","273","static/chunks/273-141542b25c6cde67.js","822","static/chunks/app/programs/page-0c84742cc71d86d5.js"],""]
+e:I[51,["619","static/chunks/619-ba102abea3e3d0e4.js","273","static/chunks/273-141542b25c6cde67.js","177","static/chunks/app/layout-78fc6cf2e59c0fe1.js"],"default"]
+f:I[2445,["619","static/chunks/619-ba102abea3e3d0e4.js","273","static/chunks/273-141542b25c6cde67.js","822","static/chunks/app/programs/page-0c84742cc71d86d5.js"],"default"]
+10:I[7351,["619","static/chunks/619-ba102abea3e3d0e4.js","273","static/chunks/273-141542b25c6cde67.js","822","static/chunks/app/programs/page-0c84742cc71d86d5.js"],"default"]
+17:I[4431,[],"ViewportBoundary"]
+19:I[4431,[],"MetadataBoundary"]
+1a:"$Sreact.suspense"
+3:["$","$La",null,{}]
+4:["$","main",null,{"className":"flex-1","children":["$","$Lb",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"min-h-screen bg-[#A7D8F5] flex items-center justify-center px-6","children":["$","div",null,{"className":"text-center max-w-2xl mx-auto","children":[["$","div",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-6xl lg:text-8xl font-bold text-[#D7263D] font-heading mb-4","children":"404"}],["$","h2",null,{"className":"text-2xl lg:text-3xl font-bold text-[#0B2239] font-heading mb-4","children":"Oops! This page could not be found."}],["$","p",null,{"className":"text-lg text-[#0B2239]/80 font-sans mb-8","children":"The page you're looking for doesn't exist or has been moved. Let's get you back to the beautiful game!"}]]}],["$","div",null,{"className":"space-y-4","children":[["$","$Ld",null,{"href":"/","className":"font-bold transition-all duration-300 transform hover:scale-105 font-sans inline-flex items-center justify-center bg-gradient-to-r from-[#D7263D] to-[#B91C3A] text-white hover:from-[#B91C3A] hover:to-[#A01530] shadow-lg px-8 py-4 text-lg rounded-xl ","children":"Go Home"}],["$","div",null,{"className":"flex flex-col sm:flex-row gap-4 justify-center mt-8","children":[["$","$Ld",null,{"href":"/programs/","className":"text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium","children":"View Programs"}],["$","span",null,{"className":"hidden sm:inline text-[#0B2239]/50","children":"•"}],["$","$Ld",null,{"href":"/enroll/","className":"text-[#0B2239] hover:text-[#D7263D] transition-colors duration-200 font-sans font-medium","children":"Enroll Now"}]]}]]}],["$","div",null,{"className":"absolute inset-0 pointer-events-none overflow-hidden","children":[["$","div",null,{"className":"absolute top-20 left-20 w-32 h-32 bg-[#D7263D]/10 rounded-full"}],["$","div",null,{"className":"absolute bottom-20 right-20 w-24 h-24 bg-[#FFD23F]/10 rounded-full"}],["$","div",null,{"className":"absolute top-1/2 left-1/3 w-16 h-16 bg-[#0B2239]/10 rounded-full"}]]}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]
+5:["$","$Le",null,{}]
+6:["$","$1","c",{"children":[null,["$","$Lb",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+7:["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-gradient-to-br from-[#A7D8F5] to-[#8BC4E8]","children":[["$","section",null,{"className":"bg-gradient-to-br from-[#0B2239] to-[#1a3a5a] text-white py-16","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6 text-center","children":["$","$Lf",null,{"children":[["$","h1",null,{"className":"text-5xl lg:text-6xl font-bold mb-6 font-heading","children":"Our Programs & Fees"}],["$","p",null,{"className":"text-xl lg:text-2xl max-w-4xl mx-auto font-sans leading-relaxed","children":"Training sessions tailored to every age group, designed for growth, skill, and excellence."}]]}]}]}],["$","hr",null,{"className":"border-t border-[#0B2239]/20"}],["$","section",null,{"className":"relative h-[300px] overflow-hidden","children":[["$","img",null,{"src":"/images/full.png","alt":"Football training programs","className":"w-full h-full object-cover"}],["$","div",null,{"className":"absolute inset-0 bg-gradient-to-r from-black/40 to-black/20"}],["$","div",null,{"className":"absolute inset-0 flex items-center justify-center","children":["$","div",null,{"className":"text-center text-white","children":[["$","h2",null,{"className":"text-5xl lg:text-6xl font-bold font-heading mb-4 drop-shadow-lg","children":"Our Programs"}],["$","p",null,{"className":"text-xl lg:text-2xl font-sans drop-shadow-md","children":"Professional training for every age group"}]]}]}]]}],["$","section",null,{"className":"max-w-7xl mx-auto px-6 py-16 relative overflow-hidden","children":[["$","div",null,{"className":"absolute inset-0 opacity-5","children":["$","div",null,{"className":"absolute inset-0","style":{"backgroundImage":"url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230B2239' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")","backgroundSize":"60px 60px"}}]}],["$","$Lf",null,{"children":["$","div",null,{"className":"text-center mb-12 relative z-10","children":[["$","h2",null,{"className":"text-4xl lg:text-5xl font-bold text-[#0B2239] mb-4 font-heading","children":"Twice a Week"}],["$","p",null,{"className":"text-xl text-[#0B2239]/80 font-sans","children":"Perfect for beginners and developing players"}],["$","p",null,{"className":"text-lg text-[#0B2239]/70 font-sans mt-2","children":"Under 6 to Under 11 boys and girls combined"}]]}]}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10","children":[["$","$Lf","0",{"delay":0,"children":["$","$L10",null,{"title":"U6","price":"R850/month","description":"Foundational skills, fun-focused, ball familiarity.","frequency":"Twice a Week","href":"/enroll/?program=U6"}]}],["$","$Lf","1",{"delay":0.1,"children":["$","$L10",null,{"title":"U9","price":"R950/month","description":"Skill development, small-sided games, coordination.","frequency":"Twice a Week","href":"/enroll/?program=U9"}]}],["$","$Lf","2",{"delay":0.2,"children":["$","$L10",null,{"title":"U11","price":"R1,050/month","description":"Technique, tactical foundations, team work.","frequency":"Twice a Week","href":"/enroll/?program=U11"}]}]]}]]}],["$","hr",null,{"className":"border-t border-[#0B2239]/20"}],["$","section",null,{"className":"bg-gradient-to-r from-yellow-100/40 to-white py-16","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6","children":[["$","$Lf",null,{"children":["$","div",null,{"className":"text-center mb-12","children":[["$","h2",null,{"className":"text-4xl lg:text-5xl font-bold text-[#0B2239] mb-4 font-heading","children":"Up to 3x a Week"}],["$","p",null,{"className":"text-xl text-[#0B2239]/80 font-sans","children":"Includes conditioning"}]]}]}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6","children":[["$","$Lf","0",{"delay":0,"children":["$","$L10",null,{"title":"U13","price":"R1,350/month","description":"At Joy Football Academy, player health and safety come first. For U13 and above, we conduct sports medicals to check injuries, mobility, and skeletal health. This helps us spot risks early and adapt training to keep players safe and thriving.","frequency":"Up to 3x a Week","href":"/enroll/?program=U13"}]}],"$L11","$L12","$L13"]}]]}]}],"$L14","$L15"]}],null,"$L16"]}]
+8:["$","$1","h",{"children":[null,[["$","$L17",null,{"children":"$L18"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L19",null,{"children":["$","div",null,{"hidden":true,"children":["$","$1a",null,{"fallback":null,"children":"$L1b"}]}]}]]}]
+1c:I[4431,[],"OutletBoundary"]
+1e:I[5278,[],"AsyncMetadataOutlet"]
+11:["$","$Lf","1",{"delay":0.1,"children":["$","$L10",null,{"title":"U15","price":"R1,450/month","description":"Strength & tactics, pathway focus.","frequency":"Up to 3x a Week","href":"/enroll/?program=U15"}]}]
+12:["$","$Lf","2",{"delay":0.2,"children":["$","$L10",null,{"title":"U17","price":"R1,550/month","description":"High-performance training, trials & exposure.","frequency":"Up to 3x a Week","href":"/enroll/?program=U17"}]}]
+13:["$","$Lf","3",{"delay":0.30000000000000004,"children":["$","$L10",null,{"title":"U19","price":"R1,800/month","description":"Elite prep & life-after-football support.","frequency":"Up to 3x a Week","href":"/enroll/?program=U19"}]}]
+14:["$","hr",null,{"className":"border-t border-[#0B2239]/20"}]
+15:["$","section",null,{"className":"bg-gradient-to-r from-[#D7263D] to-[#B91C3A] text-white py-16","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6 text-center","children":["$","$Lf",null,{"children":[["$","h2",null,{"className":"text-4xl lg:text-5xl font-bold mb-6 font-heading","children":"Ready to Start Your Journey?"}],["$","p",null,{"className":"text-xl mb-10 font-sans max-w-3xl mx-auto","children":"Join Joy Football Academy and become part of a community that values excellence, character, and the beautiful game."}],["$","div",null,{"className":"flex flex-col sm:flex-row gap-4 justify-center","children":["$","$Ld",null,{"href":"/enroll/","className":"font-bold transition-all duration-300 transform hover:scale-105 font-sans inline-flex items-center justify-center bg-gradient-to-r from-[#D7263D] to-[#B91C3A] text-white hover:from-[#B91C3A] hover:to-[#A01530] shadow-lg px-8 py-4 text-lg rounded-xl bg-white text-[#D7263D] hover:bg-gray-100","children":"Enroll Now"}]}]]}]}]}]
+16:["$","$L1c",null,{"children":["$L1d",["$","$L1e",null,{"promise":"$@1f"}]]}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:null
+1f:{"metadata":[["$","title","0",{"children":"Our Programs & Fees — Joy Football Academy"}],["$","meta","1",{"name":"description","content":"Explore our comprehensive football training programs for all age groups. From U6 to U19, we offer professional coaching and competitive pricing."}],["$","meta","2",{"name":"author","content":"Joy Football Academy"}],["$","meta","3",{"name":"keywords","content":"Football Academy,Soccer Training,Youth Football South Africa,Treverton Academy,Joy Football Academy"}],["$","meta","4",{"name":"creator","content":"Joy Football Academy"}],["$","meta","5",{"name":"publisher","content":"Joy Football Academy"}],["$","meta","6",{"name":"robots","content":"index, follow"}],["$","meta","7",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","8",{"rel":"canonical","href":"https://joyfootballacademy.co.za/"}],["$","meta","9",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","10",{"name":"google-site-verification","content":"your-google-verification-code"}],["$","meta","11",{"property":"og:title","content":"Our Programs & Fees — Joy Football Academy"}],["$","meta","12",{"property":"og:description","content":"Explore our comprehensive football training programs for all age groups. From U6 to U19, we offer professional coaching and competitive pricing."}],["$","meta","13",{"name":"twitter:card","content":"summary"}],["$","meta","14",{"name":"twitter:title","content":"Our Programs & Fees — Joy Football Academy"}],["$","meta","15",{"name":"twitter:description","content":"Explore our comprehensive football training programs for all age groups. From U6 to U19, we offer professional coaching and competitive pricing."}]],"error":null,"digest":"$undefined"}
+1b:"$1f:metadata"
